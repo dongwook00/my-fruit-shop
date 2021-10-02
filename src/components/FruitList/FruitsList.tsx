@@ -1,5 +1,5 @@
 import { StyledFruits } from './FruitsList.styles';
-import Fruit from './Fruit/Fruit';
+import { Fruit } from '../common';
 
 const Fruits: React.FC = () => {
   return (
