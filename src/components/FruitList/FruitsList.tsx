@@ -1,4 +1,4 @@
-import { StyledFruits } from './Fruits.styles';
+import { StyledFruits } from './FruitsList.styles';
 
 const Fruits: React.FC = () => {
   return (

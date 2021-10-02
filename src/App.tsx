@@ -2,7 +2,7 @@ import React from 'react';
 import { Header } from './components/Header';
 import { StyledMain } from './App.styles';
 import { TopFilter } from './components/TopFilter';
-import { Fruits } from './components/FruitList';
+import { FruitsList } from './components/FruitList';
 
 const App: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const App: React.FC = () => {
       <Header />
       <StyledMain>
         <TopFilter />
-        <Fruits />
+        <FruitsList />
       </StyledMain>
     </>
   );

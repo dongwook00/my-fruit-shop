@@ -1,3 +1,3 @@
-import Fruits from './Fruits';
+import FruitsList from './FruitsList';
 
-export { Fruits };
+export { FruitsList };
