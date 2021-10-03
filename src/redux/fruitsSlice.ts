@@ -3,12 +3,12 @@ import { FruitType } from '../components/common/Fruit/Fruit';
 
 type State = {
   list: FruitType[];
-  filtered: FruitType[];
+  filter: string;
 };
 
 const initialState: State = {
   list: [],
-  filtered: [],
+  filter: 'all',
 };
 
 export const fruitsSlice = createSlice({
@@ -17,16 +17,16 @@ export const fruitsSlice = createSlice({
   reducers: {
     setFruits: (state, action: PayloadAction<{ value: FruitType[] }>) => {
       state.list = action.payload.value;
-      state.filtered = action.payload.value;
     },
     filterAll: (state) => {
-      state.filtered = state.list;
+      state.filter = 'all';
     },
     filterNormal: (state) => {
-      state.filtered = state.list.filter((fruit) => !fruit.isPrime);
+      // state.filter = state.list.filter((fruit) => !fruit.isPrime);
+      state.filter = 'normal';
     },
     filterPrime: (state) => {
-      state.filtered = state.list.filter((fruit) => fruit.isPrime);
+      state.filter = 'prime';
     },
     subtractFruits: (state, action: PayloadAction<{ id: number }>) => {
       const targetIndex = state.list.findIndex((fruits) => fruits.id === action.payload.id);

@@ -1,10 +1,26 @@
 import { useState, useEffect } from 'react';
+import { createSelector } from 'reselect';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { setFruits } from '../redux/fruitsSlice';
 
 const useHttpRequest = () => {
   const dispatch = useAppDispatch();
-  const fruits = useAppSelector((state) => state.fruits.filtered);
+  const fruits = useAppSelector(
+    createSelector(
+      (state) => state.fruits.list,
+      (state) => state.fruits.filter,
+      (list, filter) => {
+        let result;
+
+        if (filter === 'all') result = list;
+        else if (filter === 'normal') result = list.filter((fruit) => !fruit.isPrime);
+        else if (filter === 'prime') result = list.filter((fruit) => fruit.isPrime);
+        else result = list;
+
+        return result;
+      },
+    ),
+  );
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
