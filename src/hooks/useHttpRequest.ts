@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { createSelector } from 'reselect';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
-import { setFruits } from '../redux/fruitsSlice';
+import { set } from '../redux/fruitsSlice';
 import { FILTER_TYPES } from '../components/FruitList';
 
 const useHttpRequest = () => {
@@ -34,7 +34,7 @@ const useHttpRequest = () => {
         const url = './fruits.json';
         const responsePromise = await fetch(url);
         const response = await responsePromise.json();
-        dispatch(setFruits({ value: response }));
+        dispatch(set({ value: response }));
         setIsLoading(false);
       } catch (error) {
         setIsError(true);
