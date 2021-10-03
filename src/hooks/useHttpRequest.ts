@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { createSelector } from 'reselect';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { setFruits } from '../redux/fruitsSlice';
+import { FILTER_TYPES } from '../components/FruitList';
 
 const useHttpRequest = () => {
   const dispatch = useAppDispatch();
@@ -12,9 +13,9 @@ const useHttpRequest = () => {
       (list, filter) => {
         let result;
 
-        if (filter === 'all') result = list;
-        else if (filter === 'normal') result = list.filter((fruit) => !fruit.isPrime);
-        else if (filter === 'prime') result = list.filter((fruit) => fruit.isPrime);
+        if (filter === FILTER_TYPES.all) result = list;
+        else if (filter === FILTER_TYPES.normal) result = list.filter((fruit) => !fruit.isPrime);
+        else if (filter === FILTER_TYPES.prime) result = list.filter((fruit) => fruit.isPrime);
         else result = list;
 
         return result;
