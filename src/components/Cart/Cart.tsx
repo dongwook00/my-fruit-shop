@@ -1,15 +1,12 @@
 import { Container, StyledCart, LayoutOrderSummary } from './Cart.styles';
-import { Fruit } from '../common';
+// import { Fruit } from '../common';
 import OrderSummary from './OrderSummary';
 
 const Fruits: React.FC = () => {
   return (
     <Container>
       <StyledCart>
-        <Fruit />
-        <Fruit />
-        <Fruit />
-        <Fruit />
+        <h1>asd</h1>
       </StyledCart>
       <LayoutOrderSummary>
         <OrderSummary />

@@ -1,21 +1,34 @@
 import { StyledFruit } from './Fruit.styles';
 
-const Fruits: React.FC = () => {
+export type FruitType = {
+  id: number;
+  name: string;
+  image: string;
+  stock: number;
+  price: number;
+  isPrime: boolean;
+};
+
+const Fruit: React.FC<FruitType> = (props) => {
+  const { id, name, image, stock, price, isPrime } = props;
   return (
     <StyledFruit>
-      <div className="type">prime</div>
+      {isPrime && <div className="type">prime</div>}
       <div className="description">
-        <div className="picture">🍇</div>
+        <div className="picture">{image}</div>
         <div className="text">
-          <h5 className="name">포도</h5>
-          <div className="price">3,000원</div>
+          <h5 className="name">
+            {name}
+            {id}
+          </h5>
+          <div className="price">{`${price}원`}</div>
           <div className="stock">
             <span className="item">잔량</span>
-            <span className="value">0</span>
+            <span className="value">{stock}</span>
           </div>
           <div className="qty">
             <span className="item">수량</span>
-            <span className="value">10</span>
+            <span className="value">0</span>
           </div>
         </div>
       </div>
@@ -27,4 +40,4 @@ const Fruits: React.FC = () => {
   );
 };
 
-export default Fruits;
+export default Fruit;
