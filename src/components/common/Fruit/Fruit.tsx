@@ -5,12 +5,13 @@ export type FruitType = {
   name: string;
   image: string;
   stock: number;
+  qty: number;
   price: number;
   isPrime: boolean;
 };
 
 const Fruit: React.FC<FruitType> = (props) => {
-  const { id, name, image, stock, price, isPrime } = props;
+  const { id, name, image, stock, qty, price, isPrime } = props;
   return (
     <StyledFruit>
       {isPrime && <div className="type">prime</div>}
@@ -28,7 +29,7 @@ const Fruit: React.FC<FruitType> = (props) => {
           </div>
           <div className="qty">
             <span className="item">수량</span>
-            <span className="value">0</span>
+            <span className="value">{qty}</span>
           </div>
         </div>
       </div>

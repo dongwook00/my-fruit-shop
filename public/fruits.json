@@ -4,6 +4,7 @@
     "name": "바나나",
     "image": "🍌",
     "stock": 10,
+    "qty": 0,
     "price": 4000,
     "isPrime": true
   },
@@ -12,6 +13,7 @@
     "name": "딸기",
     "image": "🍓",
     "stock": 5,
+    "qty": 0,
     "price": 20000,
     "isPrime": true
   },
@@ -20,6 +22,7 @@
     "name": "멜론",
     "image": "🍈",
     "stock": 6,
+    "qty": 0,
     "price": 3000,
     "isPrime": true
   },
@@ -28,6 +31,7 @@
     "name": "파인애플",
     "image": "🍍",
     "stock": 10,
+    "qty": 0,
     "price": 3000,
     "isPrime": true
   },
@@ -36,6 +40,7 @@
     "name": "복숭아",
     "image": "🍑",
     "stock": 10,
+    "qty": 0,
     "price": 8000,
     "isPrime": false
   },
@@ -44,6 +49,7 @@
     "name": "포도",
     "image": "🍇",
     "stock": 5,
+    "qty": 0,
     "price": 6000,
     "isPrime": false
   },
@@ -52,6 +58,7 @@
     "name": "수박",
     "image": "🍉",
     "stock": 15,
+    "qty": 0,
     "price": 22000,
     "isPrime": false
   },
@@ -60,6 +67,7 @@
     "name": "사과",
     "image": "🍎",
     "stock": 12,
+    "qty": 0,
     "price": 4000,
     "isPrime": false
   },
@@ -68,6 +76,7 @@
     "name": "토마토",
     "image": "🍅",
     "stock": 15,
+    "qty": 0,
     "price": 22000,
     "isPrime": false
   },
@@ -76,6 +85,7 @@
     "name": "레몬",
     "image": "🍋",
     "stock": 9,
+    "qty": 0,
     "price": 1000,
     "isPrime": false
   },
@@ -84,6 +94,7 @@
     "name": "체리",
     "image": "🍒",
     "stock": 20,
+    "qty": 0,
     "price": 2000,
     "isPrime": false
   },
@@ -92,6 +103,7 @@
     "name": "오렌지",
     "image": "🍊",
     "stock": 10,
+    "qty": 0,
     "price": 7000,
     "isPrime": false
   }

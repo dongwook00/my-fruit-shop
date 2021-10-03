@@ -21,6 +21,7 @@ const Fruits: React.FC = () => {
               name={fruit.name}
               image={fruit.image}
               stock={fruit.stock}
+              qty={fruit.qty}
               price={fruit.price}
               isPrime={fruit.isPrime}
             />

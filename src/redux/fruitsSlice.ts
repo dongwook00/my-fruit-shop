@@ -2,12 +2,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { FruitType } from '../components/common/Fruit/Fruit';
 
 type State = {
-  initial: FruitType[];
+  list: FruitType[];
   filtered: FruitType[];
 };
 
 const initialState: State = {
-  initial: [],
+  list: [],
   filtered: [],
 };
 
@@ -16,17 +16,17 @@ export const fruitsSlice = createSlice({
   initialState,
   reducers: {
     setFruits: (state, action: PayloadAction<{ value: FruitType[] }>) => {
-      state.initial = action.payload.value;
+      state.list = action.payload.value;
       state.filtered = action.payload.value;
     },
     filterAll: (state) => {
-      state.filtered = state.initial;
+      state.filtered = state.list;
     },
     filterNormal: (state) => {
-      state.filtered = state.initial.filter((fruit) => !fruit.isPrime);
+      state.filtered = state.list.filter((fruit) => !fruit.isPrime);
     },
     filterPrime: (state) => {
-      state.filtered = state.initial.filter((fruit) => fruit.isPrime);
+      state.filtered = state.list.filter((fruit) => fruit.isPrime);
     },
   },
 });
