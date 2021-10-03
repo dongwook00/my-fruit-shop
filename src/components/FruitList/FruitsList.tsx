@@ -1,7 +1,7 @@
 import { StyledFruits } from './FruitsList.styles';
 import { Fruit } from '../common';
 import useHttpRequest from '../../hooks/useHttpRequest';
-import { TopFilter } from '../TopFilter';
+import TopFilter from './TopFilter';
 
 const Fruits: React.FC = () => {
   const { isLoading, isError, fruits, errorMessage } = useHttpRequest();

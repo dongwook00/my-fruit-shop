@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
-import { set } from '../redux/fruitsSlice';
+import { setFruits } from '../redux/fruitsSlice';
 
 const useHttpRequest = () => {
   const dispatch = useAppDispatch();
-  const fruits = useAppSelector((state) => state.fruits);
+  const fruits = useAppSelector((state) => state.fruits.filtered);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -16,7 +16,7 @@ const useHttpRequest = () => {
         const url = './fruits.json';
         const responsePromise = await fetch(url);
         const response = await responsePromise.json();
-        dispatch(set({ value: response }));
+        dispatch(setFruits({ value: response }));
         setIsLoading(false);
       } catch (error) {
         setIsError(true);
