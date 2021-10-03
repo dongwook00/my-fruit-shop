@@ -17,6 +17,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-size: 1.6rem;
+    overflow-y: scroll;
   }
 
   .typography-prime {

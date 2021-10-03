@@ -6,6 +6,7 @@ const colors = {
   lightBlue: '#F2F3F7',
   disabledBackground: '#C8CAD2',
   disabledColor: '#9A9BA7',
+  main: '#E5E5E5',
 };
 
 export default colors;
