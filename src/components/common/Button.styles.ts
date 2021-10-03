@@ -1,12 +1,7 @@
 import styled from 'styled-components';
 import colors from '../../styles/colors.style';
 
-type Props = {
-  background: string;
-  color: string;
-};
-
-export const StyledButton = styled.button<Props>`
+export const StyledButton = styled.button`
   outline: none;
   cursor: pointer;
   padding: 1.2rem 1.6rem;
