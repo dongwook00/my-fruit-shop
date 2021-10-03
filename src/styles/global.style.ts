@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import colors from './colors.style';
 
 export const GlobalStyles = createGlobalStyle`
   *,
@@ -16,5 +17,11 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-size: 1.6rem;
+  }
+
+  .typography-prime {
+    font-style: italic;
+    font-weight: 700;
+    color: ${colors.orange};
   }
 `;

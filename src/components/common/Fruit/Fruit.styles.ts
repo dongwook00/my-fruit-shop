@@ -7,10 +7,7 @@ export const StyledFruit = styled.div`
   grid-template-columns: 1fr;
 
   .type {
-    color: orange;
     font-size: 2rem;
-    font-weight: 700;
-    font-style: italic;
   }
   .description {
     padding: 1rem;

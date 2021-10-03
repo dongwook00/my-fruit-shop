@@ -18,7 +18,7 @@ const FruitsOnCart: React.FC<FruitsOnCartType> = (props) => {
   const { id, name, image, qty, price, total, isPrime } = props;
   return (
     <StyledFruitsOnCart>
-      {isPrime && <div className="type">prime</div>}
+      {isPrime && <div className="type typography-prime">prime</div>}
       <div className="description">
         <div className="picture">{image}</div>
         <div className="text">
