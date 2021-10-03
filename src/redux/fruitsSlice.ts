@@ -43,9 +43,15 @@ export const fruitsSlice = createSlice({
       state.list[targetIndex].stock += state.list[targetIndex].qty;
       state.list[targetIndex].qty = 0;
     },
+    pay: (state) => {
+      state.list.forEach((fruit) => {
+        fruit.stock += fruit.qty;
+        fruit.qty = 0;
+      });
+    },
   },
 });
 
-export const { setFruits, filter, subtractFruits, addFruits, cancel } = fruitsSlice.actions;
+export const { setFruits, filter, subtractFruits, addFruits, cancel, pay } = fruitsSlice.actions;
 
 export default fruitsSlice.reducer;

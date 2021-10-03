@@ -1,10 +1,12 @@
 import { Container, StyledCart, LayoutOrderSummary } from './Cart.styles';
 import { createSelector } from 'reselect';
-import { FruitsOnCart } from '../common';
+import { Button, FruitsOnCart } from '../common';
 import OrderSummary from './OrderSummary';
-import { useAppSelector } from '../../redux/hooks';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
+import { pay } from '../../redux/fruitsSlice';
 
 const Fruits: React.FC = () => {
+  const dispatch = useAppDispatch();
   const fruitsOnCart = useAppSelector(
     createSelector(
       (state) => state.fruits.list.filter((fruit) => fruit.qty > 0),
@@ -50,6 +52,7 @@ const Fruits: React.FC = () => {
       </StyledCart>
       <LayoutOrderSummary>
         <OrderSummary total={summary.total} normalTotal={summary.normalTotal} primeTotal={summary.primeTotal} />
+        <Button text="결제하기" callback={() => dispatch(pay())} />
       </LayoutOrderSummary>
     </Container>
   );

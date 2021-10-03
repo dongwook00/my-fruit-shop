@@ -21,7 +21,6 @@ const OrderSummary: React.FC<Props> = ({ total, normalTotal, primeTotal }) => {
         <span className="item">총 상품금액</span>
         <span className="value">{total} 원</span>
       </div>
-      <button>결제하기</button>
     </StyledOrderSummary>
   );
 };
