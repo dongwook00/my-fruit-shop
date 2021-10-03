@@ -18,15 +18,8 @@ export const fruitsSlice = createSlice({
     setFruits: (state, action: PayloadAction<{ value: FruitType[] }>) => {
       state.list = action.payload.value;
     },
-    filterAll: (state) => {
-      state.filter = 'all';
-    },
-    filterNormal: (state) => {
-      // state.filter = state.list.filter((fruit) => !fruit.isPrime);
-      state.filter = 'normal';
-    },
-    filterPrime: (state) => {
-      state.filter = 'prime';
+    filter: (state, action: PayloadAction<{ value: string }>) => {
+      state.filter = action.payload.value;
     },
     subtractFruits: (state, action: PayloadAction<{ id: number }>) => {
       const targetIndex = state.list.findIndex((fruits) => fruits.id === action.payload.id);
@@ -40,6 +33,6 @@ export const fruitsSlice = createSlice({
   },
 });
 
-export const { setFruits, filterAll, filterNormal, filterPrime, subtractFruits, addFruits } = fruitsSlice.actions;
+export const { setFruits, filter, subtractFruits, addFruits } = fruitsSlice.actions;
 
 export default fruitsSlice.reducer;

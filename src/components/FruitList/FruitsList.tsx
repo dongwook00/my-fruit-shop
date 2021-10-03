@@ -26,7 +26,6 @@ const Fruits: React.FC = () => {
               isPrime={fruit.isPrime}
             />
           ))}
-        );
       </StyledFruits>
     </>
   );

@@ -22,10 +22,7 @@ const Fruit: React.FC<FruitType> = (props) => {
       <div className="description">
         <div className="picture">{image}</div>
         <div className="text">
-          <h5 className="name">
-            {name}
-            {id}
-          </h5>
+          <h5 className="name">{name}</h5>
           <div className="price">{`${price}원`}</div>
           <div className="stock">
             <span className="item">잔량</span>
