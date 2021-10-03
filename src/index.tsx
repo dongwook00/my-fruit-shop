@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import App from './App';
 
@@ -25,7 +26,9 @@ const GlobalStyles = createGlobalStyle`
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles />
-    <App />
+    <HashRouter>
+      <App />
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root'),
 );

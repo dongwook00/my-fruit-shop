@@ -1,18 +1,21 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import loadable from '@loadable/component';
 import { Header } from './components/Header';
 import { StyledMain } from './App.styles';
-import { TopFilter } from './components/TopFilter';
-// import { FruitsList } from './components/FruitList';
-import { Cart } from './components/Cart';
+
+const FruitsList = loadable(() => import('./components/FruitList'));
+const Cart = loadable(() => import('./components/Cart'));
 
 const App: React.FC = () => {
   return (
     <>
       <Header />
       <StyledMain>
-        <TopFilter />
-        {/* <FruitsList /> */}
-        <Cart />
+        <Switch>
+          <Route exact={true} path="/" component={FruitsList} />
+          <Route path="/cart" component={Cart} />
+        </Switch>
       </StyledMain>
     </>
   );

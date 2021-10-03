@@ -1,3 +1,3 @@
 import FruitsList from './FruitsList';
 
-export { FruitsList };
+export default FruitsList;
