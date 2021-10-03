@@ -2,6 +2,7 @@ import { StyledFruitsOnCart } from './FruitsOnCart.styles';
 import { useAppDispatch } from '../../../redux/hooks';
 import { cancel } from '../../../redux/fruitsSlice';
 import Button from '../Button';
+import numberWithCommas from '../../../helpers/numberWithCommas';
 
 export type FruitsOnCartType = {
   id: number;
@@ -23,14 +24,14 @@ const FruitsOnCart: React.FC<FruitsOnCartType> = (props) => {
         <div className="picture">{image}</div>
         <div className="text">
           <h5 className="name">{name}</h5>
-          <div className="price">{`${price}원`}</div>
+          <div className="price">{`${numberWithCommas(price)}원`}</div>
           <div className="qty">
             <span className="item">수량</span>
             <span className="value">{qty}</span>
           </div>
           <div className="">
             <span className="item">상품금액</span>
-            <span className="value">{total}원</span>
+            <span className="value">{numberWithCommas(total)}원</span>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import { StyledFruit } from './Fruit.styles';
 import Button from '../Button';
 import { useAppDispatch } from '../../../redux/hooks';
 import { subtract, add } from '../../../redux/fruitsSlice';
+import numberWithCommas from '../../../helpers/numberWithCommas';
 
 export type FruitType = {
   id: number;
@@ -26,7 +27,7 @@ const Fruit: React.FC<FruitType> = (props) => {
         <div className="picture">{image}</div>
         <div className="text">
           <h5 className="name">{name}</h5>
-          <div className="price">{`${price}원`}</div>
+          <div className="price">{`${numberWithCommas(price)}원`}</div>
           <div className="stock">
             <span className="item">잔량</span>
             <span className="value">{stock}</span>
