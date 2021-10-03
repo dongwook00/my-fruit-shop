@@ -1,4 +1,6 @@
 import { StyledFruitsOnCart } from './FruitsOnCart.styles';
+import { useAppDispatch } from '../../../redux/hooks';
+import { cancel } from '../../../redux/fruitsSlice';
 import Button from '../Button';
 
 export type FruitsOnCartType = {
@@ -12,6 +14,7 @@ export type FruitsOnCartType = {
 };
 
 const FruitsOnCart: React.FC<FruitsOnCartType> = (props) => {
+  const dispatch = useAppDispatch();
   const { id, name, image, qty, price, total, isPrime } = props;
   return (
     <StyledFruitsOnCart>
@@ -32,7 +35,7 @@ const FruitsOnCart: React.FC<FruitsOnCartType> = (props) => {
         </div>
       </div>
       <div className="actions">
-        <Button text="취소" callback={() => console.log(id)} />
+        <Button text="취소" callback={() => dispatch(cancel({ id }))} />
       </div>
     </StyledFruitsOnCart>
   );

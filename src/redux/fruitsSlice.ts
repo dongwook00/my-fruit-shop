@@ -38,9 +38,14 @@ export const fruitsSlice = createSlice({
       state.list[targetIndex].qty++;
       state.list[targetIndex].stock--;
     },
+    cancel: (state, action: PayloadAction<{ id: number }>) => {
+      const targetIndex = state.list.findIndex((fruits) => fruits.id === action.payload.id);
+      state.list[targetIndex].stock += state.list[targetIndex].qty;
+      state.list[targetIndex].qty = 0;
+    },
   },
 });
 
-export const { setFruits, filter, subtractFruits, addFruits } = fruitsSlice.actions;
+export const { setFruits, filter, subtractFruits, addFruits, cancel } = fruitsSlice.actions;
 
 export default fruitsSlice.reducer;
