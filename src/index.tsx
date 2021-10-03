@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistStore } from 'redux-persist';
 import { HashRouter } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import App from './App';
@@ -26,9 +30,13 @@ const GlobalStyles = createGlobalStyle`
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles />
-    <HashRouter>
-      <App />
-    </HashRouter>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistStore(store)}>
+        <HashRouter>
+          <App />
+        </HashRouter>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
