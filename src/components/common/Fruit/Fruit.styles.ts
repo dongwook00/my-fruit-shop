@@ -37,6 +37,7 @@ export const StyledFruit = styled.div`
   }
   .picture {
     margin-top: 2rem;
+    margin-left: 3rem;
     font-size: 8rem;
   }
   .stock {

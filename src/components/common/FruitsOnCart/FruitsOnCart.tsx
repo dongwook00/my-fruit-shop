@@ -19,7 +19,7 @@ const FruitsOnCart: React.FC<FruitsOnCartType> = (props) => {
   const { id, name, image, qty, price, total, isPrime } = props;
   return (
     <StyledFruitsOnCart>
-      {isPrime && <div className="type typography-prime">prime</div>}
+      <div className="type typography-prime">{isPrime ? 'prime' : ''}</div>
       <div className="description">
         <div className="picture">{image}</div>
         <div className="text">
@@ -29,14 +29,15 @@ const FruitsOnCart: React.FC<FruitsOnCartType> = (props) => {
             <span className="item">수량</span>
             <span className="value">{qty}</span>
           </div>
-          <div className="">
+          <div className="divider" />
+          <div className="total-price">
             <span className="item">상품금액</span>
             <span className="value">{numberWithCommas(total)}원</span>
           </div>
         </div>
       </div>
       <div className="actions">
-        <Button text="취소" callback={() => dispatch(cancel({ id }))} />
+        <Button type="secondary" text="취소" callback={() => dispatch(cancel({ id }))} />
       </div>
     </StyledFruitsOnCart>
   );

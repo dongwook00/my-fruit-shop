@@ -9,6 +9,8 @@ const colors = {
   disabledBackground: '#C8CAD2',
   disabledColor: '#9A9BA7',
   main: '#E5E5E5',
+  divider: '#C8CAD2',
+  totalPrice: '#116AD4',
 };
 
 export default colors;
