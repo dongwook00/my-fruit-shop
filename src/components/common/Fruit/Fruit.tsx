@@ -21,7 +21,7 @@ const Fruit: React.FC<FruitType> = (props) => {
 
   return (
     <StyledFruit>
-      {isPrime && <div className="type typography-prime">prime</div>}
+      <div className="type typography-prime">{isPrime ? 'prime' : ''}</div>
       <div className="description">
         <div className="picture">{image}</div>
         <div className="text">
