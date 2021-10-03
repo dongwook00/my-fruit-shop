@@ -28,9 +28,18 @@ export const fruitsSlice = createSlice({
     filterPrime: (state) => {
       state.filtered = state.list.filter((fruit) => fruit.isPrime);
     },
+    subtractFruits: (state, action: PayloadAction<{ id: number }>) => {
+      const targetIndex = state.list.findIndex((fruits) => fruits.id === action.payload.id);
+      if (state.list[targetIndex].qty === 0) return;
+      state.list[targetIndex].qty--;
+    },
+    addFruits: (state, action: PayloadAction<{ id: number }>) => {
+      const targetIndex = state.list.findIndex((fruits) => fruits.id === action.payload.id);
+      state.list[targetIndex].qty++;
+    },
   },
 });
 
-export const { setFruits, filterAll, filterNormal, filterPrime } = fruitsSlice.actions;
+export const { setFruits, filterAll, filterNormal, filterPrime, subtractFruits, addFruits } = fruitsSlice.actions;
 
 export default fruitsSlice.reducer;

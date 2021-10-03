@@ -1,4 +1,7 @@
 import { StyledFruit } from './Fruit.styles';
+import Button from '../Button';
+import { useAppDispatch } from '../../../redux/hooks';
+import { subtractFruits, addFruits } from '../../../redux/fruitsSlice';
 
 export type FruitType = {
   id: number;
@@ -11,6 +14,7 @@ export type FruitType = {
 };
 
 const Fruit: React.FC<FruitType> = (props) => {
+  const dispatch = useAppDispatch();
   const { id, name, image, stock, qty, price, isPrime } = props;
   return (
     <StyledFruit>
@@ -34,8 +38,8 @@ const Fruit: React.FC<FruitType> = (props) => {
         </div>
       </div>
       <div className="actions">
-        <button className="btn">빼기</button>
-        <button className="btn">담기</button>
+        <Button text="빼기" callback={() => dispatch(subtractFruits({ id }))} />
+        <Button text="담기" callback={() => dispatch(addFruits({ id }))} />
       </div>
     </StyledFruit>
   );
