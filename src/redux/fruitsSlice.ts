@@ -23,12 +23,19 @@ export const fruitsSlice = createSlice({
     },
     subtractFruits: (state, action: PayloadAction<{ id: number }>) => {
       const targetIndex = state.list.findIndex((fruits) => fruits.id === action.payload.id);
+
       if (state.list[targetIndex].qty === 0) return;
+
       state.list[targetIndex].qty--;
+      state.list[targetIndex].stock++;
     },
     addFruits: (state, action: PayloadAction<{ id: number }>) => {
       const targetIndex = state.list.findIndex((fruits) => fruits.id === action.payload.id);
+
+      if (state.list[targetIndex].stock === 0) return;
+
       state.list[targetIndex].qty++;
+      state.list[targetIndex].stock--;
     },
   },
 });
