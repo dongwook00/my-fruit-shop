@@ -39,7 +39,7 @@ export const StyledFruit = styled.div`
     color: #727585;
     margin-right: 0.8rem;
   }
-  .actions {
+  .btn-group {
     display: flex;
     justify-content: end;
   }

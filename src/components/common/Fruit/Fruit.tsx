@@ -16,6 +16,9 @@ export type FruitType = {
 const Fruit: React.FC<FruitType> = (props) => {
   const dispatch = useAppDispatch();
   const { id, name, image, stock, qty, price, isPrime } = props;
+  let buttonType = isPrime ? 'prime' : 'primary';
+  if (stock === 0) buttonType = 'disabled';
+
   return (
     <StyledFruit>
       {isPrime && <div className="type">prime</div>}
@@ -34,9 +37,9 @@ const Fruit: React.FC<FruitType> = (props) => {
           </div>
         </div>
       </div>
-      <div className="actions">
-        <Button text="빼기" callback={() => dispatch(subtract({ id }))} />
-        <Button text="담기" callback={() => dispatch(add({ id }))} />
+      <div className="btn-group">
+        {qty > 0 && <Button type="secondary" text="빼기" callback={() => dispatch(subtract({ id }))} />}
+        <Button type={buttonType} text="담기" callback={() => dispatch(add({ id }))} />
       </div>
     </StyledFruit>
   );
