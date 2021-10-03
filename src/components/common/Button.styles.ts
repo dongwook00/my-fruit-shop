@@ -15,6 +15,9 @@ export const StyledButton = styled.button<Props>`
   font-size: 1.4rem;
   max-height: 4rem;
   font-weight: 700;
+  &:not(:first-child) {
+    margin-left: 1.6rem;
+  }
 `;
 
 export const Prime = styled(StyledButton)`
@@ -29,6 +32,11 @@ export const Primary = styled(StyledButton)`
 
 export const Secondary = styled(StyledButton)`
   background: ${colors.lightBlue};
+  color: ${colors.darkGray};
+`;
+
+export const White = styled(StyledButton)`
+  background: ${colors.white};
   color: ${colors.darkGray};
 `;
 

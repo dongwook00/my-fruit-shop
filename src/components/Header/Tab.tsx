@@ -1,16 +1,22 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { Button } from '../common';
 import { StyledTab } from './Tab.styles';
 
 const Tab: React.FC = () => {
+  const location = useLocation();
+
   return (
     <StyledTab>
-      <NavLink to="/">
-        <Button text="상품목록" />
-      </NavLink>
-      <NavLink to="/cart">
-        <Button text="장바구니" />
-      </NavLink>
+      <li>
+        <NavLink to="/">
+          <Button type={location.pathname === '/' ? 'secondary' : 'white'} text="상품목록" />
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/cart">
+          <Button type={location.pathname === '/cart' ? 'secondary' : 'white'} text="장바구니" />
+        </NavLink>
+      </li>
     </StyledTab>
   );
 };

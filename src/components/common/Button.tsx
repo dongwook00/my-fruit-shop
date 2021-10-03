@@ -1,4 +1,4 @@
-import { StyledButton, Prime, Primary, Secondary, Disabled } from './Button.styles';
+import { StyledButton, Prime, Primary, Secondary, Disabled, White } from './Button.styles';
 
 type Props = {
   type?: string;
@@ -21,6 +21,9 @@ const Button: React.FC<Props> = ({ type, text, callback }) => {
       break;
     case 'disabled':
       buttonType = Disabled;
+      break;
+    case 'white':
+      buttonType = White;
       break;
     default:
       buttonType = Prime;
