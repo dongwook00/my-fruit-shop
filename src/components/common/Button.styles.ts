@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import colors from '../../styles/colors.style';
+import { darken } from 'polished';
 
 export const StyledButton = styled.button`
   outline: none;
@@ -18,21 +19,33 @@ export const StyledButton = styled.button`
 export const Prime = styled(StyledButton)`
   background: ${colors.orange};
   color: ${colors.white};
+  &:hover {
+    background: ${darken(0.1, colors.orange)};
+  }
 `;
 
 export const Primary = styled(StyledButton)`
   background: ${colors.yellow};
   color: ${colors.darkGray};
+  &:hover {
+    background: ${darken(0.1, colors.yellow)};
+  }
 `;
 
 export const Secondary = styled(StyledButton)`
   background: ${colors.lightBlue};
   color: ${colors.darkGray};
+  &:hover {
+    background: ${darken(0.1, colors.lightBlue)};
+  }
 `;
 
 export const White = styled(StyledButton)`
   background: ${colors.white};
   color: ${colors.darkGray};
+  &:hover {
+    background: ${darken(0.1, colors.white)};
+  }
 `;
 
 export const Disabled = styled(StyledButton)`

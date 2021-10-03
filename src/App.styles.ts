@@ -4,5 +4,5 @@ import color from './styles/colors.style';
 export const StyledContainer = styled.div``;
 export const StyledMain = styled.main`
   background: ${color.lightBlue};
-  padding: 0 4.8rem;
+  padding: 3.2rem 4.8rem;
 `;
