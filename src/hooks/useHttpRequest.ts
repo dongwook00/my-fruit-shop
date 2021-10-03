@@ -27,6 +27,7 @@ const useHttpRequest = () => {
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
+    if (fruits.length > 0) return;
     const fetchData = async () => {
       try {
         setIsLoading(true);

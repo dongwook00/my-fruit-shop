@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { FruitType } from '../components/common/Fruit/Fruit';
+import { FILTER_TYPES } from '../components/FruitList';
 
 type State = {
   list: FruitType[];
@@ -8,7 +9,7 @@ type State = {
 
 const initialState: State = {
   list: [],
-  filter: 'all',
+  filter: FILTER_TYPES.all,
 };
 
 export const fruitsSlice = createSlice({
