@@ -7,8 +7,8 @@ export const fruitsSlice = createSlice({
   name: 'fruits',
   initialState,
   reducers: {
-    set: (state, action: PayloadAction<{ value: FruitType[] }>) => {
-      state = action.payload.value;
+    set: (_, action: PayloadAction<{ value: FruitType[] }>) => {
+      return action.payload.value;
     },
   },
 });

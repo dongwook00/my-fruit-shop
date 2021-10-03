@@ -1,6 +1,5 @@
 import { StyledFruits } from './FruitsList.styles';
 import { Fruit } from '../common';
-// import { TopFilter } from '../TopFilter';
 import useHttpRequest from '../../hooks/useHttpRequest';
 import { TopFilter } from '../TopFilter';
 
