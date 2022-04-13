@@ -24,15 +24,15 @@ const FruitsOnCart: React.FC<FruitsOnCartType> = (props) => {
         <div className="picture">{image}</div>
         <div className="text">
           <h5 className="name">{name}</h5>
-          <div className="price">{`${numberWithCommas(price)}원`}</div>
+          <div className="price">{`$${numberWithCommas(price)}`}</div>
           <div className="qty">
-            <span className="item">수량</span>
+            <span className="item">Qty</span>
             <span className="value">{qty}</span>
           </div>
           <div className="divider" />
           <div className="total-price">
-            <span className="item">상품금액</span>
-            <span className="value">{numberWithCommas(total)}원</span>
+            <span className="item">Subtotal</span>
+            <span className="value">$ {numberWithCommas(total)}</span>
           </div>
         </div>
       </div>

@@ -17,21 +17,21 @@ const OrderSummary: React.FC<Props> = ({ total, normalTotal, primeTotal }) => {
       <div className="prime-sum">
         <span className="item">
           <span className="typography-prime">prime</span>
-          <span> 과일</span>
+          <span> Fruits</span>
         </span>
-        <span className="value">{numberWithCommas(primeTotal)} 원</span>
+        <span className="value">${numberWithCommas(primeTotal)}</span>
       </div>
       <div className="general-sum">
-        <span className="item">일반 과일</span>
-        <span className="value">{numberWithCommas(normalTotal)} 원</span>
+        <span className="item">Fruits</span>
+        <span className="value">${numberWithCommas(normalTotal)}</span>
       </div>
       <div className="divider" />
       <div className="total">
-        <span className="item">총 상품금액</span>
-        <span className="value">{numberWithCommas(total)} 원</span>
+        <span className="item">Total</span>
+        <span className="value">${numberWithCommas(total)}</span>
       </div>
       <div className="btn-group">
-        <Button type="primary" text="결제하기" callback={() => dispatch(pay())} />
+        <Button type="primary" text="Payment" callback={() => dispatch(pay())} />
       </div>
     </StyledOrderSummary>
   );

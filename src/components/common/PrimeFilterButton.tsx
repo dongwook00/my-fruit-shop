@@ -22,7 +22,7 @@ const PrimeFilterButton: React.FC<Props> = ({ type, callback }) => {
   return (
     <StyledButton as={buttonType} onClick={callback}>
       <span className="typography-prime">prime</span>
-      <span> 과일</span>
+      <span> Fruits</span>
     </StyledButton>
   );
 };

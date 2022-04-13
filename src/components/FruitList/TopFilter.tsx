@@ -12,12 +12,12 @@ const TopFilter: React.FC = () => {
     <StyledTopFilter>
       <Button
         type={currentFilter === 'all' ? 'primary' : 'white'}
-        text="전체"
+        text="All"
         callback={() => dispatch(filter({ value: FILTER_TYPES.all }))}
       />
       <Button
         type={currentFilter === 'normal' ? 'primary' : 'white'}
-        text="일반과일"
+        text="Fruits"
         callback={() => dispatch(filter({ value: FILTER_TYPES.normal }))}
       />
       <PrimeFilterButton
