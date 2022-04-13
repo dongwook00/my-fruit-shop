@@ -9,12 +9,12 @@ const Tab: React.FC = () => {
     <StyledTab>
       <li>
         <NavLink to="/">
-          <Button type={location.pathname === '/' ? 'secondary' : 'white'} text="상품목록" />
+          <Button type={location.pathname === '/' ? 'secondary' : 'white'} text="Fruit list" />
         </NavLink>
       </li>
       <li>
         <NavLink to="/cart">
-          <Button type={location.pathname === '/cart' ? 'secondary' : 'white'} text="장바구니" />
+          <Button type={location.pathname === '/cart' ? 'secondary' : 'white'} text="Cart" />
         </NavLink>
       </li>
     </StyledTab>
