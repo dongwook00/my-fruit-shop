@@ -16,6 +16,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.6rem;
     color: ${colors.darkGray};
     overflow-y: scroll;

@@ -6,7 +6,6 @@ export const StyledOrderSummary = styled.section`
   .item {
     font-size: 1.6rem;
     font-weight: 700;
-    width: 9rem;
     text-align: right;
   }
   .prime-sum {
